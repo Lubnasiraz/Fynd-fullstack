@@ -1,0 +1,68 @@
+.ele1{
+    background-color: blue;
+}
+.fyndfsjs{
+    color:cadetblue;
+    font-size: medium;
+}
+#g1{
+    background-color: chartreuse;
+}
+#g1:hover{
+    background-color: coral;
+}
+.blo{
+    border: 2px solid red;
+    margin: 14px;
+    padding: 20px;
+    width: 20vw;
+    height: 20vh;
+}
+.inlinee{
+    border:2px solid blue;
+    border-radius: 10%;
+    padding: 10px 10px;
+    margin: 10px 4px;
+
+}
+.inlineb{
+    display: inline-block;
+    border: 2px solid black ;
+    border-radius: 15%;
+    margin: 10px 4px;
+    padding: 14px 14px;
+}
+#parent{
+    position: static;
+}
+#staticexample{
+    position: static;4
+    
+}
+#trans{
+    width: 20px;
+    background-color: coral;
+    height: 20px;
+    transition: width 2s;
+
+    transition-timing-function: ease;
+}
+#trans:hover{
+    width: 50px;
+    background-color: cyan;
+    height: 20px;
+    transition: width 5s;
+}
+#parents{
+    height: 350px;
+    width: 300px;
+    background-color: plum;
+}
+#ex{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}
+*{
+    color:limegreen
+}
