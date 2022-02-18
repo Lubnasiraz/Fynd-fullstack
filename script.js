@@ -83,3 +83,41 @@ for(i=0;i<p.length;i++)
 {
     console.log(`the value ${p[i]}`);
 }
+
+// function......
+function test(){
+    console.log("the first statement");
+}
+test();
+(function(){
+    console.log("the anonymous");
+})();
+
+
+// arrow function
+
+var test2 = () => {
+    console.log("arrow function");
+}
+test2();
+
+var greet="hello";
+var test1=()=>{
+    return `${greet}"lubna"`;
+}
+let my=test1();
+console.log(my);
+
+var say = (myname) =>`hello my name is ${myname}`
+console.log(say("anam"));
+
+
+var  sub=(a,b)=> a-b
+ var p=sub(5,3)
+ console.log(p);
+
+ //celsius into fahrenheight
+
+ var far=(cel)=>(cel*1.8)+32;
+ var f=far(60);
+ console.log("the temp in fahrenheight "+f+"f");
