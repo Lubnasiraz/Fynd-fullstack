@@ -1,0 +1,100 @@
+
+
+
+
+ const express = require("express");
+ const app = express();
+const userRouter = require("./api/routes/user.js");
+const morgan = require("morgan");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const dbUrl ="mongodb+srv://LubnaSiraz:Lubna123@cluster0.zhxk7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const orderRouter = require("./api/routes/order.js")
+
+mongoose.connect(dbUrl,{
+    useNewUrlParser:true,
+    
+    useUnifiedTopology:true
+}).then(
+    ()=>console.log("Mongodb is successfully connected")
+).catch(
+    (err)=>console.log(err)
+)
+
+
+
+
+
+
+
+
+
+
+// const userrouter =require("./api/routes/user.js");
+
+
+
+// const morgan =require("morgan");
+
+// const bodyParser=require("body-parser")
+
+
+
+// //body parser
+// // app.use(bodyParser.urlencoded({extended:false}))
+// // app.use(bodyParser.json());
+// // //morgan
+// // app.use(morgan("dev"));
+// // app.use("/user",userrouter)
+
+// // app.get("/user",(req,res,next)=>{
+// //      res.json({message:`execute only port`})
+// //    })
+
+
+
+
+// // module.exports=app
+//
+app.use(cors())
+
+//configuring body parser(accepts key value from request and parses)
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+//configuring morgan(logger)
+app.use(morgan("dev"));
+
+
+app.get("/",(req,res,next)=>{
+    res.json({message:"This works, thankyou"})
+    next();
+});
+// app.use("/users",userRouter);
+app.use("/order",orderRouter);
+
+
+
+module.exports = app;
+// var http=require("http");
+// var importedfromindex=require("./index")
+
+// const PORT = process.env.PORT || 5000
+// http.createServer(function(req,res){
+//     res.writeHead(200,{'Content-Type':'text/plain'});
+//     res.write("This is coming from the server we created")
+  
+//       res.end("this is coming from the source folder")
+// }
+// ).listen(PORT);
+//  const express = require("express");
+// const app=express();
+// const userrouter =require("./api/routes/user.js");
+
+// app.use((req,res,next)=>{
+//   console.log("first use all middlewae ran");
+//   next()
+// },(req,res,next)=>{
+//   console.log("second use all middleware run");
+//   next()
+// }
+// )

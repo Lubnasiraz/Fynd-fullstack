@@ -1,28 +1,16 @@
-const express = require("express");
+const express = require("express")
+const router = express.Router();
+const {create_user,get_all_users,get_single_user,delete_single_user,update_user} = require("../controller/user.js");
 
-const router=express.Router();
 
 
-let users=[
-    {
-    name:"lubna",
-    id:1
-},
-{
-        name:"prachi",
-        id:2
-    },
-]
-router.post("/",(req, res, next)=>
-{
-    users.push(req.body);
-    res.json({meesage:"successfully push"})
-})
-router.get("/",(req,res,next)=>
-{
-    res.json({
-        //message:"this is coming from user router"
-        users:users
-    })
-})
-module.exports=router;
+router.post("/",create_user);
+router.get("/",get_all_users);
+
+//get single user
+router.get("/:userId",get_single_user);
+router.delete("/:userId",delete_single_user);
+router.patch("/:userId",update_user)
+
+
+module.exports = router;
